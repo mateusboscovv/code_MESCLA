@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/styles/pet.css" rel="stylesheet" />
+    <link href="/styles/fonts.css" rel="stylesheet" />
+    <link rel="icon" href="components/images/petLogo.png" type="image/x-icon">
+    <script
+      src="https://kit.fontawesome.com/b432763f75.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src = auth.js></script>
+    <title>Pet's Community / MESCLA</title>
+  </head>
+  <body>
+    <header>
+      <div id="title">
+        <h1>PET'S COMMUNITY 🐾 </h1>
+      </div>
+        <div>
+          <button class="notification-button" id="notificacao">
+              <span><i class="fas fa-bell"></i></span>
+          </button>
+          <div class="notification-dropdown" id="notificationDropdown">
+            <div class="notification-header">
+              <strong>Notificações</strong>
+            </div>
+            <ul class="notification-list">
+              <li class="notification-item">Lucas Santos enviou uma mensagem</li>
+              <li class="notification-item">Seu post recebeu 5 curtidas</li>
+              <li class="notification-item">Davi comentou em sua foto</li>
+            </ul>
+            <div class="notification-footer">
+              <a href="#">Ver todas as notificações</a>
+            </div>
+          </div>
+          </div>
+        <div class="search-container">
+            <input type="text" placeholder="Procure no Pet's Community...">
+          <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="sidebar">
+        <a href="feed2.html" class="menu-item">
+            <span><i class="fa-solid fa-screwdriver-wrench"></i></span> <h2>MESCLA</h2>
+          </a>
+        <a href="comunidade.html" class="menu-item">
+          <span><i class="fas fa-users"></i></span>
+          <h2>Comunidade</h2>
+        </a>
+        <a href="chat.html" class="menu-item">
+          <span><i class="fas fa-comment"></i></span>
+          <h2>Mensagens</h2>
+        </a>
+        <a href="profile.html" class="menu-item">
+          <span><i class="fa-solid fa-user"></i></span>
+          <h2>Perfil</h2>
+        </a>
+        <a href="popupPublicacaoPet.html" class="menu-item">
+          <span><i class="fas fa-plus"></i></span>
+          <h2>Publicar</h2>
+        </a>
+      </div>
+
+      <div class="scroll-container" id="publicacoes"></div>
+
+      <div class="sidebar-separator"></div>
+
+        <ul class="posts" id="posts">
+          <!-- As publicações serão adicionadas aqui -->
+        </ul>
+      </div>
+
+    </main>
+
+    <script type="module" src="feedPet.js"></script>
+
+    <script>
+      const notificationButton = document.getElementById("notificacao");
+      const notificationDropdown = document.getElementById(
+        "notificationDropdown"
+      );
+
+      notificationButton.addEventListener("click", () => {
+        if (notificationDropdown.classList.contains("show")) {
+          notificationDropdown.classList.remove("show");
+          setTimeout(() => {
+            notificationDropdown.style.display = "none";
+          }, 400);
+        } else {
+          notificationDropdown.style.display = "block";
+          setTimeout(() => {
+            notificationDropdown.classList.add("show");
+          }, 10);
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          !notificationButton.contains(event.target) &&
+          !notificationDropdown.contains(event.target)
+        ) {
+          notificationDropdown.classList.remove("show");
+          notificationDropdown.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

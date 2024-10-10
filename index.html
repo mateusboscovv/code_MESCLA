@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/styles/style.css" rel="stylesheet" />
+    <link href="/styles/fonts.css" rel="stylesheet" />
+    <link href="/styles/media.css" rel="stylesheet" />
+    <link rel="icon" href="components/images/mesclaM.png" type="image/x-icon">
+    <title>MESCLA</title>
+  </head>
+  <body>
+    <header>
+      <div id="title">
+        <article>
+          <img class="image"src="components/images/mesclado.png" alt="MESCLA"/>
+        </article>
+      </div>
+
+      <ul>
+        <a href="index.html" id="inicio-button"><li>Início</li></a>
+        <a href="sobre.html" id="sobre-button"><li>Sobre</li></a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Cadastre-se</button>
+          <div class="dropdown-content">
+            <a href="cadastro.html">Sou cidadão</a>
+            <a href="cadastroEmpresa.html">Sou empresa</a>
+            <a href="cadastroPrefeitura.html">Sou prefeitura</a>
+          </div>
+        </div>
+      </ul>
+    </header>
+    <main>
+      <aside>
+        <h2><span>Participe agora</span></h2>
+        <h2>do MESCLA</h2>
+        <p>
+          O MESCLA é um site dedicado à solicitação de reparos de problemas de
+          infraestrutura urbana, facilitando a comunicação entre os cidadãos e
+          os órgãos responsáveis, garantindo a manutenção e melhoria contínua
+          dos espaços públicos.
+        </p>
+        <form>
+          <div id="btn">
+            <button type="button" id="login-button">Logar</button>
+          </div>
+        </form>
+      </aside>
+      <article>
+        <img src="/components/images/mescla.png" alt="mulher-equipe" />
+      </article>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 MESCLA. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+      document
+        .getElementById("login-button")
+        .addEventListener("click", function () {
+          window.location.href = "login2.html";
+        });
+    </script>
+  </body>
+</html>
